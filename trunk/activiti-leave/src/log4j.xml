@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration threshold="debug" xmlns:log4j="http://jakarta.apache.org/log4j/">
+    <appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{ABSOLUTE\} %5p %c{3\}:%L - %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="FILE" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="${CATALINA.HOME}/logs/richie144/activiti-leave.log"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{ABSOLUTE\} %5p %c{10\}:%L - %m%n"/>
+        </layout>
+    </appender>
+
+    <logger name="org.richie144.leave">
+        <level value="debug"/>
+    </logger>
+
+    <!--<logger name="org.hsqldb.jdbc">
+        <level value="debug"/>
+    </logger>
+
+    <logger name="com.opensymphony.xwork2.spring">
+        <level value="debug"/>
+    </logger>
+
+    <logger name="java.sql">
+        <level value="debug"/>
+    </logger>
+
+    <logger name="org.apache.ibatis">
+        <level value="debug"/>
+    </logger>-->
+
+    <logger name="org.springframework.mock.web.MockServletContext">
+        <level value="error"/>
+    </logger>
+
+    <root>
+        <level value ="info"/>
+        <appender-ref ref="FILE"/>
+    </root>
+</log4j:configuration>
