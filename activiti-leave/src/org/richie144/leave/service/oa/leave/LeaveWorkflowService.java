@@ -185,7 +185,6 @@ public class LeaveWorkflowService {
 			leave.setProcessInstance(processInstance);
 			leave.setProcessDefinition(getProcessDefinition(processInstance.getProcessDefinitionId()));
 			results.add(leave);
-
 			// 设置当前任务信息
 			List<Task> tasks = taskService.createTaskQuery().processInstanceId(processInstance.getId()).orderByTaskCreateTime()
 					.desc().listPage(0, 1);

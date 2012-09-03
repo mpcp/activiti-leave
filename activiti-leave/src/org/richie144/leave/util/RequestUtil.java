@@ -11,7 +11,8 @@ package org.richie144.leave.util;
 
 import javax.servlet.http.HttpSession;
 
-import org.richie144.leave.entity.account.User;
+import org.activiti.engine.identity.User;
+
 
 /**
  * 
