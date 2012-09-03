@@ -17,10 +17,11 @@ import javax.servlet.http.HttpSession;
 
 import org.activiti.engine.ActivitiException;
 import org.activiti.engine.TaskService;
+import org.activiti.engine.identity.User;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.apache.commons.lang3.StringUtils;
 import org.richie144.leave.dto.Variable;
-import org.richie144.leave.entity.account.User;
+
 import org.richie144.leave.entity.oa.Leave;
 import org.richie144.leave.service.oa.leave.LeaveManager;
 import org.richie144.leave.service.oa.leave.LeaveWorkflowService;
