@@ -11,6 +11,7 @@ package org.richie144.leave.web;
 
 import java.util.List;
 
+
 import javax.servlet.http.HttpSession;
 
 import org.activiti.engine.IdentityService;
@@ -20,6 +21,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import org.richie144.leave.util.RequestUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -35,15 +37,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @version 
  * 
  */
+@Controller
+@RequestMapping("/user")
 public class UserController {
 	private static Logger log = LoggerFactory.getLogger(UserController.class);
 
-	// Activiti Identify Service
 	private IdentityService identityService;
 	
 	
 	
-	public IdentityService getIdentityService() {
+	/*public IdentityService getIdentityService() {
 		return identityService;
 	}
 
@@ -51,7 +54,7 @@ public class UserController {
 
 	public void setIdentityService(IdentityService identityService) {
 		this.identityService = identityService;
-	}
+	}*/
 	/**
 	 * 
 	 * logon(用户登录系统)
@@ -60,6 +63,7 @@ public class UserController {
 	 * @Exception 异常对象
 	 * @since  CodingExample　Ver(编码范例查看) 1.1
 	 */
+	@RequestMapping("/logon")
 	public String logon(String username,String password,HttpSession session) {
 		log.debug("logon request: {username={}, password={}}", username, password);
 		boolean hasLogin = identityService.checkPassword(username, password);
