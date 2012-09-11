@@ -11,11 +11,15 @@ package org.richie144.leave.service.oa.leave;
 
 import java.util.Date;
 
+import javax.annotation.Resource;
+
 import org.activiti.engine.RuntimeService;
 import org.activiti.engine.delegate.DelegateTask;
 import org.activiti.engine.delegate.TaskListener;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.richie144.leave.entity.oa.Leave;
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * 
@@ -30,9 +34,14 @@ import org.richie144.leave.entity.oa.Leave;
  * @version 
  * 
  */
+@Component
+@Transactional
 public class ReportBackEndProcessor implements TaskListener {
-
+	
+	@Resource
 	private LeaveManager leaveManager;
+	
+	@Resource
 	private RuntimeService runtimeService;
 	
 	@Override

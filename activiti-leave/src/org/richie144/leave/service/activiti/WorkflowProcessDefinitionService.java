@@ -28,6 +28,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.core.io.DefaultResourceLoader;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
+import org.springframework.stereotype.Service;
 
 
 /**
@@ -43,12 +44,15 @@ import org.springframework.core.io.ResourceLoader;
  * @version 
  * 
  */
+@Service
 public class WorkflowProcessDefinitionService {
 	
 	private Logger logger = LoggerFactory.getLogger(getClass());
 	
+	@javax.annotation.Resource
 	private RepositoryService repositoryService;
 	
+	@javax.annotation.Resource
 	private HistoryService historyService;
 	
 	/**

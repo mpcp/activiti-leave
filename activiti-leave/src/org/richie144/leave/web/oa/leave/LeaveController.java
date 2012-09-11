@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
 import org.activiti.engine.ActivitiException;
@@ -28,6 +29,7 @@ import org.richie144.leave.service.oa.leave.LeaveWorkflowService;
 import org.richie144.leave.util.RequestUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -50,14 +52,18 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
  * 
  */
 @RequestMapping("/oa/leave")
+@Controller
 public class LeaveController {
 	
 	private Logger log = LoggerFactory.getLogger(getClass());
 	
+	@Resource
 	private LeaveWorkflowService workflowService;
 	
+	@Resource
 	private TaskService taskService;
 	
+	@Resource
 	private LeaveManager leaveManager;
 	
 	@RequestMapping(value={"apply",""})

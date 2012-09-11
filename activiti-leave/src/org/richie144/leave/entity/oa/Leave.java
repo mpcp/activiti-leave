@@ -13,8 +13,12 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Map;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 import org.activiti.engine.history.HistoricProcessInstance;
 import org.activiti.engine.repository.ProcessDefinition;
@@ -90,7 +94,8 @@ public class Leave extends IdEntity implements Serializable {
 	 * 流程定义
 	 */
 	private ProcessDefinition processDefinition;
-
+	
+	@Column(name = "process_instance_id")
 	public String getProcessInstanceId() {
 		return processInstanceId;
 	}
@@ -98,7 +103,8 @@ public class Leave extends IdEntity implements Serializable {
 	public void setProcessInstanceId(String processInstanceId) {
 		this.processInstanceId = processInstanceId;
 	}
-
+	
+	@Column(name = "user_id")
 	public String getUserId() {
 		return userId;
 	}
@@ -107,6 +113,8 @@ public class Leave extends IdEntity implements Serializable {
 		this.userId = userId;
 	}
 
+	@Column(name = "start_time")
+	@Temporal(TemporalType.TIMESTAMP)
 	public Date getStartTime() {
 		return startTime;
 	}
@@ -114,7 +122,9 @@ public class Leave extends IdEntity implements Serializable {
 	public void setStartTime(Date startTime) {
 		this.startTime = startTime;
 	}
-
+	
+	@Column(name = "end_time")
+	@Temporal(TemporalType.TIMESTAMP)
 	public Date getEndTime() {
 		return endTime;
 	}
@@ -122,7 +132,9 @@ public class Leave extends IdEntity implements Serializable {
 	public void setEndTime(Date endTime) {
 		this.endTime = endTime;
 	}
-
+	
+	@Column(name = "reality_start_time")
+	@Temporal(TemporalType.TIMESTAMP)
 	public Date getRealityStartTime() {
 		return realityStartTime;
 	}
@@ -130,7 +142,9 @@ public class Leave extends IdEntity implements Serializable {
 	public void setRealityStartTime(Date realityStartTime) {
 		this.realityStartTime = realityStartTime;
 	}
-
+	
+	@Column(name = "reality_end_time")
+	@Temporal(TemporalType.TIMESTAMP)
 	public Date getRealityEndTime() {
 		return realityEndTime;
 	}
@@ -138,7 +152,9 @@ public class Leave extends IdEntity implements Serializable {
 	public void setRealityEndTime(Date realityEndTime) {
 		this.realityEndTime = realityEndTime;
 	}
-
+	
+	@Column
+	@Temporal(TemporalType.TIMESTAMP)
 	public Date getApplyTime() {
 		return applyTime;
 	}
@@ -146,7 +162,8 @@ public class Leave extends IdEntity implements Serializable {
 	public void setApplyTime(Date applyTime) {
 		this.applyTime = applyTime;
 	}
-
+	
+	@Column(name = "leave_type")
 	public String getLeaveType() {
 		return leaveType;
 	}
@@ -154,7 +171,7 @@ public class Leave extends IdEntity implements Serializable {
 	public void setLeaveType(String leaveType) {
 		this.leaveType = leaveType;
 	}
-
+	@Column
 	public String getReason() {
 		return reason;
 	}
@@ -162,7 +179,8 @@ public class Leave extends IdEntity implements Serializable {
 	public void setReason(String reason) {
 		this.reason = reason;
 	}
-
+	
+	@Transient
 	public Task getTask() {
 		return task;
 	}
@@ -170,7 +188,8 @@ public class Leave extends IdEntity implements Serializable {
 	public void setTask(Task task) {
 		this.task = task;
 	}
-
+	
+	@Transient
 	public Map<String, Object> getVariables() {
 		return variables;
 	}
@@ -178,7 +197,8 @@ public class Leave extends IdEntity implements Serializable {
 	public void setVariables(Map<String, Object> variables) {
 		this.variables = variables;
 	}
-
+	
+	@Transient
 	public ProcessInstance getProcessInstance() {
 		return processInstance;
 	}
@@ -186,7 +206,8 @@ public class Leave extends IdEntity implements Serializable {
 	public void setProcessInstance(ProcessInstance processInstance) {
 		this.processInstance = processInstance;
 	}
-
+	
+	@Transient
 	public HistoricProcessInstance getHistoricProcessInstance() {
 		return historicProcessInstance;
 	}
@@ -195,7 +216,7 @@ public class Leave extends IdEntity implements Serializable {
 			HistoricProcessInstance historicProcessInstance) {
 		this.historicProcessInstance = historicProcessInstance;
 	}
-
+	@Transient
 	public ProcessDefinition getProcessDefinition() {
 		return processDefinition;
 	}
