@@ -16,6 +16,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import javax.annotation.Resource;
+
 import org.activiti.engine.IdentityService;
 import org.activiti.engine.RepositoryService;
 import org.activiti.engine.RuntimeService;
@@ -41,6 +43,7 @@ import org.richie144.leave.util.WorkflowUtils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 /**
  * 
@@ -55,15 +58,20 @@ import org.slf4j.LoggerFactory;
  * @version 
  * 
  */
+@Component
 public class WorkflowTraceService {
 	private Logger logger = LoggerFactory.getLogger(getClass());
 	
+	@Resource
 	private RepositoryService repositoryService;
 	
+	@Resource
 	private RuntimeService runtimeService;
 	
+	@Resource
 	private TaskService taskService;
 	
+	@Resource
 	private IdentityService identityService;
 	
 	public List<Map<String,Object>> processTrace(String processInstanceId) throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {

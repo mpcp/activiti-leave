@@ -12,6 +12,7 @@ package org.richie144.leave.web;
 import java.util.List;
 
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
 import org.activiti.engine.IdentityService;
@@ -41,20 +42,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/user")
 public class UserController {
 	private static Logger log = LoggerFactory.getLogger(UserController.class);
-
+	
+	@Resource
 	private IdentityService identityService;
-	
-	
-	
-	/*public IdentityService getIdentityService() {
-		return identityService;
-	}
-
-
-
-	public void setIdentityService(IdentityService identityService) {
-		this.identityService = identityService;
-	}*/
 	/**
 	 * 
 	 * logon(用户登录系统)

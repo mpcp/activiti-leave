@@ -11,8 +11,12 @@ package org.richie144.leave.service.oa.leave;
 
 import java.util.Date;
 
+import javax.annotation.Resource;
+
 import org.richie144.leave.dao.LeaveDao;
 import org.richie144.leave.entity.oa.Leave;
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * 
@@ -27,8 +31,11 @@ import org.richie144.leave.entity.oa.Leave;
  * @version 
  * 
  */
+@Component
+@Transactional(readOnly = true)
 public class LeaveManager {
 	
+	@Resource
 	private LeaveDao leaveDao;
 	/**
 	 * 
@@ -51,7 +58,8 @@ public class LeaveManager {
 	public void setLeaveDao(LeaveDao leaveDao) {
 		this.leaveDao = leaveDao;
 	}
-
+	
+	@Transactional(readOnly = false)
 	public void saveLeave(Leave leave) {
 		if(leave.getId() == null) {
 			leave.setApplyTime(new Date());

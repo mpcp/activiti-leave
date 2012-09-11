@@ -12,11 +12,19 @@ package org.richie144.leave.entity.account;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+
 /**
  * 
  * 项目名称：activiti-leave
  * 类名称：Group
- * 类描述：
+ * 类描述：组与用户是多对多的关系
  * 创建人：任欢
  * 创建时间：2012-8-27 上午11:40:49
  * 修改人：任欢
@@ -25,6 +33,8 @@ import java.util.List;
  * @version 
  * 
  */
+@Entity
+@Table(name="act_id_group")
 public class Group implements Serializable {
 	
 	private static final long serialVersionUID = 10589563254899L;
@@ -46,7 +56,10 @@ public class Group implements Serializable {
 		this.name = name;
 		this.type = type;
 	}
-
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id_")
 	public String getId() {
 		return id;
 	}
@@ -54,7 +67,8 @@ public class Group implements Serializable {
 	public void setId(String id) {
 		this.id = id;
 	}
-
+	
+	@Column(name = "name_")
 	public String getName() {
 		return name;
 	}
@@ -62,7 +76,8 @@ public class Group implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	
+	@Column(name = "type_")
 	public String getType() {
 		return type;
 	}
@@ -70,7 +85,8 @@ public class Group implements Serializable {
 	public void setType(String type) {
 		this.type = type;
 	}
-
+	
+	@ManyToMany(mappedBy = "actIdGroups" )
 	public List<User> getActIdUsers() {
 		return actIdUsers;
 	}

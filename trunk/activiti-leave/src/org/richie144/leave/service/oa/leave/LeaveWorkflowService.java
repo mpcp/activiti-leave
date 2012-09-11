@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import javax.annotation.Resource;
+
 import org.activiti.engine.HistoryService;
 import org.activiti.engine.IdentityService;
 import org.activiti.engine.RepositoryService;
@@ -25,6 +27,8 @@ import org.activiti.engine.task.Task;
 import org.richie144.leave.entity.oa.Leave;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * 
@@ -39,19 +43,27 @@ import org.slf4j.LoggerFactory;
  * @version 
  * 
  */
+@Component
+@Transactional(readOnly = true)
 public class LeaveWorkflowService {
 	private static Logger log = LoggerFactory.getLogger(LeaveWorkflowService.class);
 	
+	@Resource
 	private LeaveManager leaveManager;
 	
+	@Resource
 	private IdentityService identityService;
 	
+	@Resource
 	private RuntimeService runtimeService;
 	
+	@Resource
 	private TaskService taskService;
 	
+	@Resource
 	private RepositoryService repositoryService;
 	
+	@Resource
 	private HistoryService historyService;
 	
 	public LeaveManager getLeaveManager() {
