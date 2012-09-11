@@ -11,6 +11,7 @@ package org.richie144.leave.dao;
 
 import org.richie144.leave.entity.oa.Leave;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Component;
 
 /**
  * 
@@ -25,6 +26,7 @@ import org.springframework.data.repository.CrudRepository;
  * @version 
  * 
  */
+@Component
 public interface LeaveDao extends CrudRepository<Leave, Long> {
 	
 }
