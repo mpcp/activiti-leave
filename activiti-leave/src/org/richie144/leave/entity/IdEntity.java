@@ -20,7 +20,7 @@ import javax.persistence.MappedSuperclass;
  * @version 
  *
  */
-
+//jpa父类的标识
 @MappedSuperclass
 public abstract class IdEntity {
 	
