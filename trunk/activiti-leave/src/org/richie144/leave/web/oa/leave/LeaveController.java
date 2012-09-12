@@ -162,18 +162,17 @@ public class LeaveController {
 	 * @Exception 异常对象
 	 * @since  CodingExample　Ver(编码范例查看) 1.1
 	 */
-	@RequestMapping("detail/{id")
+	@RequestMapping("detail/{id}")
 	@ResponseBody
 	public Leave getLeave( @PathVariable("id")Long id) {
 		Leave leave = leaveManager.getLeave(id);
 		return leave;
 	}
-	
 
 	/**
 	 * 读取详细数据
 	 * @param id
-	 * @return
+	 * @return json格式字符串
 	 */
 	@RequestMapping(value = "detail-with-vars/{id}/{taskId}")
 	@ResponseBody
