@@ -14,7 +14,7 @@
 	<description>Spring公共配置</description>
 	
 	<!--读取jdbc相关配置文件 ignore-unresolvable的这个属性是保证多个配置文件被load的时候出现Could not resolve placeholder错误-->
-	<context:property-placeholder ignore-unresolvable="true" location="classpath*:jdbc-mysql.properties"/>
+		<context:property-placeholder ignore-unresolvable="true" location="classpath*:/jdbc-mysql.properties"/>
 	
 	<!--使用annotation注册bean，并保证@Required、@Autowired的属性被注入，暂不注入Controller-->
 	<context:component-scan base-package="org.richie144.leave">
@@ -86,5 +86,4 @@
 		<property name="timeBetweenEvictionRunsMillis" value="3600000" />
 		<property name="minEvictableIdleTimeMillis" value="3600000" />
 	</bean>
-
 </beans>
