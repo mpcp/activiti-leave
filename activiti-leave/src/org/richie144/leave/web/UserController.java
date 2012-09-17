@@ -43,7 +43,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class UserController {
 	private static Logger log = LoggerFactory.getLogger(UserController.class);
 	
-	@Resource
+	//@Resource
 	private IdentityService identityService;
 	/**
 	 * 

@@ -58,16 +58,16 @@ public class ActivitiController {
 	 */
 	private static  final Logger LOGGER =  LoggerFactory.getLogger(ActivitiController.class);
 	
-	@Resource
+	//@Resource
 	private WorkflowProcessDefinitionService workflowProcessDefinitionService;
 	
-	@Resource
+	//@Resource
 	private RepositoryService repositoryService;
 	
-	@Resource
+	//@Resource
 	private RuntimeService runtimeService;
 	
-	@Resource
+	//@Resource
 	private WorkflowTraceService workflowTraceService;
 	
 	/**
