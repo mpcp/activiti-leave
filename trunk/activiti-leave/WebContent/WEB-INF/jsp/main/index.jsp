@@ -43,5 +43,14 @@
 			</table>
 		</div>
 	</div>
+	<div id="centerPanel">
+		<div id="tabs">
+			<ul><li><a class="tabs-title" href="#tab-index">首页</a><span class='ui-icon ui-icon-close' title='关闭标签页'></span></li></ul>
+			<div id="tab-index">
+				<iframe id="mainIframe" name="mainIframe" src="welcome" class="module-iframe" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe>
+			</div>
+		</div>
+	</div>
+	<%@ include file="menu.jsp" %>
 </body>
 </html>
