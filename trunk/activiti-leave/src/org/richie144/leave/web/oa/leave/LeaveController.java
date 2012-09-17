@@ -57,13 +57,13 @@ public class LeaveController {
 	
 	private Logger log = LoggerFactory.getLogger(getClass());
 	
-	@Resource
+	//@Resource
 	private LeaveWorkflowService workflowService;
 	
-	@Resource
+	//@Resource
 	private TaskService taskService;
 	
-	@Resource
+	//@Resource
 	private LeaveManager leaveManager;
 	
 	@RequestMapping(value={"apply",""})

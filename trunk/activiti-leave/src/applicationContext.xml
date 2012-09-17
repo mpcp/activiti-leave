@@ -17,10 +17,11 @@
 		<context:property-placeholder ignore-unresolvable="true" location="classpath*:/jdbc-mysql.properties"/>
 		-->
 	<!--使用annotation注册bean，并保证@Required、@Autowired的属性被注入，暂不注入Controller-->
+
 	<context:component-scan base-package="org.richie144.leave">
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 	</context:component-scan>
-	
+
 	<!--hibernate 的jpa适配器的配置-->
 	<!--
 	<bean id="hibernateJpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>

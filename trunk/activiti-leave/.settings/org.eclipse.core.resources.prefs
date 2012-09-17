@@ -1,2 +1,5 @@
 eclipse.preferences.version=1
+encoding//WebContent/resources/lib/jquery-easyui-1.3/locale/easyui-lang-cz.js=UTF-8
+encoding//WebContent/resources/lib/jquery-easyui-1.3/locale/easyui-lang-zh_CN.js=UTF-8
+encoding//WebContent/resources/lib/jquery-easyui-1.3/locale/easyui-lang-zh_TW.js=UTF-8
 encoding//sql/data.sql=UTF-8
