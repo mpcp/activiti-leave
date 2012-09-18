@@ -1,0 +1,20 @@
+#css3menu{
+	margin: 0px;
+	//隐藏列表中的符号
+	list-style: none;
+	padding :0px;
+	background-color: #dedede;
+	border-width: 1px;
+    border-style: solid;
+    border-color: #5f5f5f;
+    
+}
+#css3menu ul {
+	//display: none;
+	//position: absolute;
+	left:-1px;
+	//top: 98%;
+	background-color: #FFFFFF;
+	border-color: #d4d4d4;
+	
+}
