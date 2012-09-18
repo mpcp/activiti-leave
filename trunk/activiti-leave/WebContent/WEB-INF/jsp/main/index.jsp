@@ -3,9 +3,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Activiti演示系统</title>
 <%@ include file="/common/global.jsp" %>
+<link charset="UTF-8" rel="stylesheet" href="${ctx }/resources/css/menu.css">
+<link charset="UTF-8" rel="stylesheet" href="${ctx }/resources/css/main.css">
 <script type="text/javascript" charset="UTF-8" language="javascript">
  /* 	var notLogon = ${empty user};
 	if(notLogon) {
